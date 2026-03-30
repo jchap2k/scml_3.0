@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D7264E7C-D4CE-4C79-AB9C-3D4995DB7E38}</ProjectGuid>
+    <RootNamespace>scml2_tlm2</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+<PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+<PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+<PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+<PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Debug\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/vmg /FS /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../src; ../../src/scml2; ../../src/scml2_tlm2; $(SYSTEMC)/../src; $(TLM2)/include/tlm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)scml2_tlm2.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/vmg /FS /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../src; ../../src/scml2; ../../src/scml2_tlm2; $(SYSTEMC)/../src; $(TLM2)/include/tlm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)scml2_tlm2.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/vmg /FS /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>../../src; ../../src/scml2; ../../src/scml2_tlm2; $(SYSTEMC)/../src; $(TLM2)/include/tlm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_WARNINGS;HOST_X86;DEBUG32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>.\obj\$(Configuration)_vc8/</AssemblerListingLocation>
+      <ObjectFileName>.\obj\$(Configuration)_vc8/</ObjectFileName>
+      <ProgramDataBaseFileName>.\obj\$(Configuration)_vc8/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)scml2_tlm2.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>/vmg /FS /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>../../src; ../../src/scml2; ../../src/scml2_tlm2; $(SYSTEMC)/../src; $(TLM2)/include/tlm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;_CRT_SECURE_NO_WARNINGS;HOST_X86;DEBUG32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>.\obj\$(Configuration)_vc8/</AssemblerListingLocation>
+      <ObjectFileName>.\obj\$(Configuration)_vc8/</ObjectFileName>
+      <ProgramDataBaseFileName>.\obj\$(Configuration)_vc8/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)scml2_tlm2.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\scml2_tlm2\ft_socket_impl_factory.cc" />
+    <ClCompile Include="..\..\src\scml2_tlm2\socket_command_map.cc" />
+    <ClCompile Include="..\..\src\scml2_tlm2\snps_tlm2_base_extension.cc" />
+    <ClCompile Include="..\..\src\scml2_tlm2\snps_tlm2_extensions_defs.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\scml2_tlm2\ft_initiator_socket_impl.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\ft_target_socket_impl.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_utils\EnabledStateObserver.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_utils\ft_initiator_socket.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_utils\ft_socket_impl_factory.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_utils\ft_target_socket.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_utils\snps_tlm2_mm.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\scml2_tlm2.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_utils\snps_tlm2_socket_if.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_utils\snps_tlm2_utils.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_base_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_extensions.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_phase_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_extension_macros.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_common_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_amba_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_ahb_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_axi_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_axi4_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_axi4_stream_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_ace_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_ace_utility.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_chi_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_pcie_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_cxl_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_ocp_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_gft_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_agft_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_nttp_proto_extension.h" />
+    <ClInclude Include="..\..\src\scml2_tlm2\snps_tlm2_extensions\snps_tlm2_axi2serial_bridge_extension.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

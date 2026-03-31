@@ -625,9 +625,25 @@ DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (bool, collect_databeats)
 DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (bool, dba_supported)
 DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (int, invoke_timing_cbks)
 DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (int, invoke_behavior_cbks)
-DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (bool, consume_annotated_time)
 
 #undef DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS
+template <unsigned int BUSWIDTH>
+bool tlm2_ft_target_port_pe<BUSWIDTH>::get_consume_annotated_time_impl() {
+    if (m_adaptor != nullptr) {
+        return (bool)m_adaptor->get_attribute("consume_annotated_time");
+    }
+    return consume_annotated_time_value.is_initialized() ? consume_annotated_time_value.get() : true;
+}
+
+template <unsigned int BUSWIDTH>
+void tlm2_ft_target_port_pe<BUSWIDTH>::set_consume_annotated_time_impl(bool value) {
+    if (m_adaptor != nullptr) {
+        m_adaptor->set_attribute("consume_annotated_time", value ? 1 : 0);
+    } else {
+        consume_annotated_time_value = value;
+    }
+}
+
 
 template <unsigned int BUSWIDTH>
 sc_core::sc_in<bool>& tlm2_ft_target_port_pe<BUSWIDTH>::get_clock_port_impl(){

@@ -271,8 +271,8 @@ void tlm2_ft_initiator_port_pe<BUSWIDTH>::finalize_local_construction()
 		}
 	} else {
 		m_adaptor.reset(scml2::initiator_port_adaptor::create(m_name + "_adaptor", &(this->_socket)));
-		if (this->consume_annotated_time) {
-		  m_adaptor->set_attribute("consume_annotated_time", 1);
+		if (this->consume_annotated_time.get_initialized()) {
+		  m_adaptor->set_attribute("consume_annotated_time", this->consume_annotated_time ? 1 : 0);
 		}
 		if (m_bwInterface != nullptr) {
 			m_adaptor->register_bw_direct_mem_if(m_bwInterface);

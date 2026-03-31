@@ -968,7 +968,7 @@ protected:
   unsigned m_capacity[OUTSTANDING_TYPE_MAX]           = {0};
 
   /* If 1, consume annotated time when triggering incoming callbacks */
-  unsigned int m_consume_annotated_time  = 0;
+  unsigned int m_consume_annotated_time  = 1;
   tlm_utils::peq_with_cb_and_phase<port_adaptor_impl> m_in_cb_peq;
 
   sc_core::sc_module *m_sysc_module = nullptr;

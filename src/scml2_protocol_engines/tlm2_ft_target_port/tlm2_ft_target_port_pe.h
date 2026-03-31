@@ -414,8 +414,8 @@ void tlm2_ft_target_port_pe<BUSWIDTH>::finalize_local_construction()
 	}
   } else {
 		m_adaptor = scml2::target_port_adaptor::create(m_name + "_adaptor", &(this->m_socket));
-		if (this->consume_annotated_time) {
-		  m_adaptor->set_attribute("consume_annotated_time", 1);
+		if (this->consume_annotated_time.get_initialized()) {
+		  m_adaptor->set_attribute("consume_annotated_time", this->consume_annotated_time ? 1 : 0);
 		}
 		if (this->abstraction == FT) {
 		  if (read_capacity_value.is_initialized()) {

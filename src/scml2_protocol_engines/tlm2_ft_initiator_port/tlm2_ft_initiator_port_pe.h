@@ -119,6 +119,8 @@ public:
 	virtual void set_max_beats_impl(int value) ;
 	virtual int get_invoke_timing_cbks_impl() ;
 	virtual void set_invoke_timing_cbks_impl(int value) ;
+	virtual bool get_consume_annotated_time_impl() ;
+	virtual void set_consume_annotated_time_impl(bool value) ;
 
 	virtual std::string get_protocol_impl() ;
 	virtual unsigned int get_bus_width_impl() ;
@@ -246,6 +248,7 @@ protected :
         attribute_value<int> max_beats_value;
         attribute_value<int> invoke_timing_cbks_value;
         attribute_value<bool> dmi_enabled_value;
+        attribute_value<bool> consume_annotated_time_value;
 
 };
 
@@ -271,8 +274,8 @@ void tlm2_ft_initiator_port_pe<BUSWIDTH>::finalize_local_construction()
 		}
 	} else {
 		m_adaptor.reset(scml2::initiator_port_adaptor::create(m_name + "_adaptor", &(this->_socket)));
-		if (this->consume_annotated_time.get_initialized()) {
-		  m_adaptor->set_attribute("consume_annotated_time", this->consume_annotated_time ? 1 : 0);
+		if (consume_annotated_time_value.is_initialized()) {
+		  set_consume_annotated_time_impl(consume_annotated_time_value.get());
 		}
 		if (m_bwInterface != nullptr) {
 			m_adaptor->register_bw_direct_mem_if(m_bwInterface);
@@ -389,6 +392,7 @@ DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (int, handle_tkeep)
 DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (int, dba_supported)
 DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (int, max_beats)
 DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (int, invoke_timing_cbks)
+DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (bool, consume_annotated_time)
 
 #undef DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS
 

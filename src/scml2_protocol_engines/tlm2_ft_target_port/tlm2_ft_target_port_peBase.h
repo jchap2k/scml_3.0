@@ -82,6 +82,8 @@ public:
 		 invoke_behavior_cbks.set_setter(this, &tlm2_ft_target_port_peBase::set_invoke_behavior_cbks_impl);
 		 bus_width.set_getter(this, &tlm2_ft_target_port_peBase::get_bus_width_impl);
 		 bus_width.set_setter(this, &tlm2_ft_target_port_peBase::set_bus_width_impl);
+		 consume_annotated_time.set_getter(this, &tlm2_ft_target_port_peBase::get_consume_annotated_time_impl);
+		 consume_annotated_time.set_setter(this, &tlm2_ft_target_port_peBase::set_consume_annotated_time_impl);
 	}
 	
 	//! Callbacks 
@@ -177,6 +179,8 @@ private:
 	virtual void set_invoke_behavior_cbks_impl(int value) = 0;
 	virtual unsigned int get_bus_width_impl() = 0;
 	void set_bus_width_impl(unsigned int) {};
+	virtual bool get_consume_annotated_time_impl() = 0;
+	virtual void set_consume_annotated_time_impl(bool value) = 0;
 };
 
 } // namespace scml2

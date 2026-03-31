@@ -78,6 +78,8 @@ public:
 		 bus_width.set_setter(this, &tlm2_ft_initiator_port_peBase::set_bus_width_impl);
 		 dmi_enabled.set_setter(this, &tlm2_ft_initiator_port_peBase::set_dmi_enabled_impl);
 		 dmi_enabled.set_getter(this, &tlm2_ft_initiator_port_peBase::get_dmi_enabled_impl);
+		 consume_annotated_time.set_getter(this, &tlm2_ft_initiator_port_peBase::get_consume_annotated_time_impl);
+		 consume_annotated_time.set_setter(this, &tlm2_ft_initiator_port_peBase::set_consume_annotated_time_impl);
 	}
 	
 	//! Callbacks 
@@ -181,6 +183,8 @@ private:
 	virtual void set_clock_port_impl(sc_core::sc_in<bool>& value) = 0;
 	virtual bool get_dmi_enabled_impl() = 0;
 	virtual void set_dmi_enabled_impl(bool value) = 0;
+	virtual bool get_consume_annotated_time_impl() = 0;
+	virtual void set_consume_annotated_time_impl(bool value) = 0;
 	
 };
 

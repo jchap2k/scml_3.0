@@ -74,6 +74,8 @@ protected:
 	virtual void set_invoke_timing_cbks_impl(int value);
 	virtual int get_invoke_behavior_cbks_impl();
 	virtual void set_invoke_behavior_cbks_impl(int value);
+	virtual bool get_consume_annotated_time_impl();
+	virtual void set_consume_annotated_time_impl(bool value);
 	virtual unsigned int get_bus_width_impl() ;
 public:
 
@@ -233,6 +235,7 @@ private :
         attribute_value<bool> dba_supported_value;
         attribute_value<int> invoke_timing_cbks_value;
         attribute_value<int> invoke_behavior_cbks_value;
+        attribute_value<bool> consume_annotated_time_value;
 };
 
 template <unsigned int BUSWIDTH>
@@ -414,8 +417,8 @@ void tlm2_ft_target_port_pe<BUSWIDTH>::finalize_local_construction()
 	}
   } else {
 		m_adaptor = scml2::target_port_adaptor::create(m_name + "_adaptor", &(this->m_socket));
-		if (this->consume_annotated_time.get_initialized()) {
-		  m_adaptor->set_attribute("consume_annotated_time", this->consume_annotated_time ? 1 : 0);
+		if (consume_annotated_time_value.is_initialized()) {
+		  set_consume_annotated_time_impl(consume_annotated_time_value.get());
 		}
 		if (this->abstraction == FT) {
 		  if (read_capacity_value.is_initialized()) {
@@ -622,6 +625,7 @@ DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (bool, collect_databeats)
 DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (bool, dba_supported)
 DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (int, invoke_timing_cbks)
 DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (int, invoke_behavior_cbks)
+DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS (bool, consume_annotated_time)
 
 #undef DEFINE_ATTRIBUTE_GETTER_SETTER_WRAPPERS
 
